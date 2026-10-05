@@ -1,0 +1,2 @@
+hypothesis>=6.100
+coverage>=7.0
