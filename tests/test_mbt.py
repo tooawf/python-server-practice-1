@@ -14,7 +14,8 @@ class RPCTestMachine(RuleBasedStateMachine):
     def __init__(self) -> None:
         super().__init__()
         self.model = DataModel()
-        self.server = RPCServer(self.model)
+        self.server_model = DataModel()
+        self.server = RPCServer(self.server_model)
         self.thread = threading.Thread(target=self.server.serve_forever, daemon=True)
         self.thread.start()
         time.sleep(0.03)
